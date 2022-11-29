@@ -13,6 +13,8 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { TodoComponent } from './todo/todo.component';
 import { QuoteComponent } from './quote/quote.component';
+import { NavComponent } from './nav/nav.component';
+import {HttpClientModule} from '@angular/common/http';
 
 const myRoute:Routes=[
   {
@@ -32,7 +34,12 @@ const myRoute:Routes=[
     component:UserDataComponent
   },
   {
-    path:"todo"
+    path:"todo",
+    component:TodoComponent
+  },
+  {
+    path:"quote",
+    component:QuoteComponent
   }
 ]
 
@@ -46,13 +53,15 @@ const myRoute:Routes=[
     ShoppingComponent,
     UserDataComponent,
     TodoComponent,
-    QuoteComponent
+    QuoteComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule
+    RouterModule.forRoot(myRoute),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

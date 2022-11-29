@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-quote',
@@ -7,7 +8,17 @@ import { Component } from '@angular/core';
 })
 export class QuoteComponent {
 
+  constructor(private api:ApiService){
+    api.fetchquote().subscribe(
+      (response)=>
+      {
+        this.data=response;
+      }
+    )
+  }
 
-  data:any=[]
+ data:any=[]
+
+  
 
 }
