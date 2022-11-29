@@ -1,3 +1,5 @@
+
+<app-nav></app-nav>
 <div class="container">
     <div class="row">
         <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
@@ -19,7 +21,7 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr *ngFor ="let i of public.entries">
+                          <tr *ngFor ="let i of data">
                             <th scope="row">{{i.API}}</th>
                             <td>{{i.Description}}</td>
                             <td>{{i.Auth}}</td>
